@@ -1,0 +1,14 @@
+Classification Report — Logistic Regression
+============================================================
+                    precision    recall  f1-score   support
+
+            Laying       1.00      1.00      1.00       537
+           Sitting       0.98      0.88      0.93       491
+          Standing       0.90      0.98      0.94       532
+           Walking       0.94      0.99      0.97       496
+Walking Downstairs       0.99      0.96      0.98       420
+  Walking Upstairs       0.97      0.94      0.95       471
+
+          accuracy                           0.96      2947
+         macro avg       0.96      0.96      0.96      2947
+      weighted avg       0.96      0.96      0.96      2947

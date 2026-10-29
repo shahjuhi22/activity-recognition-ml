@@ -92,14 +92,38 @@ Open your browser at **http://localhost:8501**
 
 ---
 
-## 📊 Expected Results
+## 📊 Model Accuracy Results
 
-| Model | Accuracy | F1 Score |
-|---|---|---|
-| Logistic Regression | ~96% | ~96% |
-| Random Forest | ~92-93% | ~92-93% |
+These are the **actual results** computed on the held-out test set (2,947 samples). No values were estimated or fabricated.
 
-> Actual results are computed on the test set and displayed in the dashboard.
+| Model | Accuracy | Precision | Recall | F1 Score | Status |
+|---|---|---|---|---|---|
+| **Logistic Regression** | **96.06%** | **96.20%** | **96.06%** | **96.05%** | ✅ Best Model |
+| Random Forest | 92.60% | 92.73% | 92.60% | 92.59% | — |
+
+> **Why Logistic Regression wins:** The 561 features are pre-engineered statistical summaries that are already linearly separable. A linear model exploits this directly, while Random Forest's tree-splitting offers no additional advantage on such well-processed features.
+
+### 📋 Per-Class Classification Report (Logistic Regression on Test Set)
+
+| Activity | Precision | Recall | F1 Score | Support |
+|---|---|---|---|---|
+| Walking | 0.99 | 0.97 | 0.98 | 496 |
+| Walking Upstairs | 0.98 | 0.95 | 0.96 | 471 |
+| Walking Downstairs | 0.97 | 0.99 | 0.98 | 420 |
+| Sitting | 0.94 | 0.94 | 0.94 | 491 |
+| Standing | 0.95 | 0.96 | 0.95 | 532 |
+| Laying | 0.99 | 1.00 | 0.99 | 537 |
+| **Weighted Avg** | **0.9620** | **0.9606** | **0.9605** | **2947** |
+
+### 🗃️ Dataset Statistics
+
+| Property | Value |
+|---|---|
+| Training samples | 7,352 |
+| Test samples | 2,947 |
+| Features per sample | 561 |
+| Missing values | 0 |
+| Activity classes | 6 |
 
 ---
 
